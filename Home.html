@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khushi | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: #fff;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5f5;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 100px 8% 0;
+    }
+
+    .hero-content {
+      max-width: 550px;
+    }
+
+    .hero-content h1 {
+      font-size: 50px;
+    }
+
+    .hero-content h1 span {
+      color: #38bdf8;
+    }
+
+    .highlight {
+      color: #38bdf8;
+      margin: 10px 0;
+    }
+
+    .hero-content h2 {
+      font-size: 24px;
+      color: #94a3b8;
+      height: 30px;
+    }
+
+    .hero-content p {
+      margin: 15px 0;
+      color: #cbd5f5;
+      line-height: 1.6;
+    }
+
+    /* BUTTONS */
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      margin-right: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #38bdf8;
+      color: #000;
+    }
+
+    .primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-3px);
+    }
+
+    .secondary {
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .secondary:hover {
+      background: #38bdf8;
+      color: #000;
+    }
+
+    /* IMAGE */
+    .hero-image img {
+      width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        right: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: #1e293b;
+        width: 200px;
+        padding: 20px;
+        transition: 0.3s;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-image {
+        margin-top: 30px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Khushi</div>
+
+    <ul class="nav-links">
+      <li><a href="C:\Users\hp\codealpha_portfolio\Home.html">Home</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\About.html">About</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\project.html">Projects</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\contact.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle">&#9776;</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi, I'm <span>Khushi</span></h1>
+
+      <h3 class="highlight">Building modern web experiences with creativity & code</h3>
+
+      <h2 class="typing"></h2>
+
+      <p>
+        I'm a passionate frontend developer who loves turning ideas into visually appealing 
+        and user-friendly websites.
+      </p>
+
+      <p>
+        I enjoy working with HTML, CSS, and JavaScript to build smooth and interactive experiences.
+      </p>
+
+      <div class="buttons">
+        <a href="C:\Users\hp\codealpha_portfolio\sportfolio.html" class="btn primary">View My Work</a>
+        <a href="C:\Users\hp\codealpha_portfolio\contact.html" class="btn secondary">Let's Connect</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="C:\Users\hp\Downloads\IMG_1605.PNG" alt="profile">
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const text = ["Frontend Developer", "Web Designer", "UI Enthusiast"];
+    let index = 0;
+    let charIndex = 0;
+    const typingElement = document.querySelector(".typing");
+
+    function type() {
+      if (charIndex < text[index].length) {
+        typingElement.textContent += text[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 1500);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingElement.textContent = text[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        index = (index + 1) % text.length;
+        setTimeout(type, 500);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+
+    // Mobile Menu
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>

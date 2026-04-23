@@ -1,0 +1,265 @@
+
+ <header class="navbar">
+    <div class="logo">Khushi</div>
+
+    <ul class="nav-links">
+      <li><a href="C:\Users\hp\codealpha_portfolio\Home.html">Home</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\About.html">About</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\project.html">Projects</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\contact.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle">&#9776;</div>
+  </header>
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+
+  <h2 class="section-title">📩 Get In Touch</h2>
+  <p class="section-subtitle">Have an idea, project, or opportunity? Let’s talk.</p>
+
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+
+      <div class="info-box">
+        <span>📧</span>
+        <div>
+          <h4>Email</h4>
+          <p>khushibudhija@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <span>📱</span>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 9253436353</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <span>📍</span>
+        <div>
+          <h4>Location</h4>
+          <p>India</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <form class="contact-form">
+
+      <div class="input-group">
+        <input type="text" required>
+        <label>Your Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" required>
+        <label>Your Email</label>
+      </div>
+
+      <div class="input-group">
+        <textarea rows="5" required></textarea>
+        <label>Your Message</label>
+      </div>
+
+      <button type="submit">🚀 Send Message</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- CSS -->
+
+<!-- Contact -->
+ <style>
+  /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5f5;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+.contact {
+  Padding: 100px 8%;
+  Background: #020617;
+  Color: #fff;
+  Text-align: center;
+}
+
+<!-- Grid-->
+.contact-container {
+  Display: flex;
+  Gap: 50px;
+  Margin-top: 50px;
+  Justify-content: space-between;
+  Flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.contact-info {
+  Flex: 1;
+  Display: flex;
+  Flex-direction: column;
+  Gap: 25px;
+}
+
+/* INFO BOX */
+.info-box {
+  Display: flex;
+  Align-items: center;
+  Gap: 15px;
+  Background: linear-gradient(145deg, #0f172a, #020617);
+  Padding: 20px;
+  Border-radius: 12px;
+  Transition: 0.3s;
+  Border: 1px solid rgba(56,189,248,0.1);
+}
+
+.info-box span {
+  Font-size: 22px;
+}
+
+.info-box h4 {
+  Margin: 0;
+  Font-size: 14px;
+  Color: #94a3b8;
+}
+
+.info-box p {
+  Margin: 0;
+  Font-size: 15px;
+  Color: #fff;
+}
+
+/* HOVER */
+.info-box:hover {
+  Transform: translateY(-5px);
+  Border: 1px solid #38bdf8;
+  Box-shadow: 0 10px 25px rgba(56,189,248,0.2);
+}
+
+/* FORM */
+.contact-form {
+  Flex: 1;
+  Display: flex;
+  Flex-direction: column;
+  Gap: 25px;
+}
+
+/* FLOATING INPUT */
+.input-group {
+  Position: relative;
+}
+
+.input-group input,
+.input-group textarea {
+  Width: 100%;
+  Padding: 14px;
+  Border: 1px solid #1e293b;
+  Background: #0f172a;
+  Color: #fff;
+  Border-radius: 8px;
+  Outline: none;
+}
+
+/* LABEL */
+.input-group label {
+  Position: absolute;
+  Left: 12px;
+  Top: 12px;
+  Color: #94a3b8;
+  Font-size: 13px;
+  Pointer-events: none;
+  Transition: 0.3s;
+  Background: #0f172a;
+  Padding: 0 5px;
+}
+
+/* FLOAT EFFECT */
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  Top: -8px;
+  Font-size: 11px;
+  Color: #38bdf8;
+}
+
+/* BUTTON */
+.contact-form button {
+  Padding: 14px;
+  Background: #38bdf8;
+  Color: #000;
+  Border: none;
+  Border-radius: 8px;
+  Cursor: pointer;
+  Font-weight: 500;
+  Transition: 0.3s;
+}
+
+.contact-form button:hover {
+  Background: #0ea5e9;
+  Transform: translateY(-3px);
+  Box-shadow: 0 10px 20px rgba(56,189,248,0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-container {
+    Flex-direction: column;
+  }
+}
+</style>
+
+
+

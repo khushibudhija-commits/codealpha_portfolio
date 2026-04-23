@@ -1,0 +1,176 @@
+
+
+*{
+  Margin:0;
+  Padding:0;
+  Box-sizing:border-box;
+  Font-family:’Poppins’,sans-serif;
+}
+
+Html{
+  Scroll-behavior:smooth;
+}
+
+Body{
+  Background:#0f172a;
+  Color:#fff;
+  Padding-top:70px;
+}
+
+/* NAVBAR */
+.navbar{
+  Position:fixed;
+  Top:0;
+  Width:100%;
+  Background:#020617;
+  Border-bottom:1px solid rgba(255,255,255,0.05);
+  z-index:1000;
+}
+
+.nav-container{
+  Max-width:1200px;
+  Margin:auto;
+  Padding:12px 20px;
+  Display:flex;
+  Justify-content:space-between;
+  Align-items:center;
+}
+
+.logo{
+  Color:#38bdf8;
+}
+
+.nav-links{
+  Display:flex;
+  List-style:none;
+  Gap:35px;
+}
+
+.nav-links a{
+  Color:#94a3b8;
+  Text-decoration:none;
+  Position:relative;
+}
+
+/* underline */
+.nav-links a::after{
+  Content:””;
+  Position:absolute;
+  Left:0;
+  Bottom:-5px;
+  Width:0%;
+  Height:2px;
+  Background:#38bdf8;
+  Transition:0.3s;
+}
+
+.nav-links a:hover::after{
+  Width:100%;
+}
+
+/* HERO */
+.hero{
+  Height:100vh;
+  Display:flex;
+  Justify-content:center;
+  Align-items:center;
+  Text-align:center;
+}
+
+.hero h1 span{
+  Color:#38bdf8;
+}
+
+.buttons{
+  Margin-top:40px;
+}
+
+.btn{
+  Padding:12px 25px;
+  Background:#38bdf8;
+  Color:black;
+  Text-decoration:none;
+  Border-radius:6px;
+}
+
+/* SECTIONS */
+.skills, .projects, .contact{
+  Padding:80px 8%;
+  Text-align:center;
+}
+
+.skills-container,
+.projects-container{
+  Display:grid;
+  Grid-template-columns:repeat(3,1fr);
+  Gap:20px;
+}
+
+/* GLOW */
+.skill-card, .project-card{
+  Background:#1e293b;
+  Padding:20px;
+  Border-radius:10px;
+  Transition:0.3s;
+}
+
+.skill-card:hover, .project-card:hover{
+  Transform:translateY(-8px);
+  Box-shadow:0 0 20px #38bdf8;
+}
+
+/* CONTACT */
+.contact-container{
+  Display:flex;
+  Gap:30px;
+  Justify-content:center;
+  Flex-wrap:wrap;
+}
+
+.contact-form{
+  Display:flex;
+  Flex-direction:column;
+  Gap:10px;
+}
+
+/* FOOTER */
+.footer{
+  Text-align:center;
+  Padding:20px;
+  Background:#020617;
+}
+
+/* MOBILE */
+.menu-toggle{
+  Display:none;
+  Font-size:24px;
+  Cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .menu-toggle{
+    Display:block;
+  }
+
+  .nav-links{
+    Position:absolute;
+    Top:60px;
+    Right:0;
+    Background:#020617;
+    Flex-direction:column;
+    Width:200px;
+    Display:none;
+    Padding:20px;
+    Gap:20px;
+  }
+
+  .nav-links.active{
+    Display:flex;
+  }
+
+  .skills-container,
+  .projects-container{
+    Grid-template-columns:1fr;
+  }
+}

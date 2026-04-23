@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khushi | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:#fff;
+      padding-top:70px;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#020617;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      z-index:1000;
+    }
+
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      padding:12px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:#38bdf8;
+      font-weight:600;
+    }
+
+    .nav-links{
+      display:flex;
+      list-style:none;
+      gap:35px;
+    }
+
+    .nav-links a{
+      color:#94a3b8;
+      text-decoration:none;
+      position:relative;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0%;
+      height:2px;
+      background:#38bdf8;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    /* HERO */
+    .hero{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h1 span{
+      color:#38bdf8;
+    }
+
+    .buttons{
+      margin-top:30px;
+    }
+
+    .btn{
+      padding:12px 25px;
+      background:#38bdf8;
+      color:black;
+      text-decoration:none;
+      border-radius:6px;
+    }
+
+    /* SECTIONS */
+    .skills, .projects, .contact{
+      padding:80px 8%;
+      text-align:center;
+    }
+
+    .skills-container,
+    .projects-container{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .skill-card, .project-card{
+      background:#1e293b;
+      padding:20px;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    .skill-card:hover, .project-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 20px #38bdf8;
+    }
+
+    /* CONTACT */
+    .contact-container{
+      display:flex;
+      gap:30px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .contact-form{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      padding:10px;
+      border:none;
+      border-radius:5px;
+    }
+
+    .contact-form button{
+      padding:10px;
+      background:#38bdf8;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+    .footer{
+      text-align:center;
+      padding:20px;
+      background:#020617;
+    }
+
+    /* MOBILE */
+    .menu-toggle{
+      display:none;
+      font-size:24px;
+      cursor:pointer;
+    }
+
+    @media(max-width:768px){
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:60px;
+        right:0;
+        background:#020617;
+        flex-direction:column;
+        width:200px;
+        display:none;
+        padding:20px;
+        gap:20px;
+      }
+
+      .nav-links.active{
+        display:flex;
+      }
+
+      .skills-container,
+      .projects-container{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Khushi Portfolio</div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="menu-toggle">&#9776;</div>
+    </div>
+  </header>
+<header class="navbar">
+    <div class="logo">Khushi</div>
+
+    <ul class="nav-links">
+      <li><a href="C:\Users\hp\codealpha_portfolio\Home.html">Home</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\About.html">About</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\project.html">Projects</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\contact.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle">&#9776;</div>
+  </header>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi, I’m <span>Khushi</span></h1>
+      <h3>Building modern web experiences</h3>
+      <h2 class="typing"></h2>
+
+      <p>I’m a frontend developer who loves creating beautiful websites.</p>
+
+      <div class="buttons">
+        <a href="C:\Users\hp\codealpha_portfolio\Resume.html" class="btn">View Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <h2>My Skills</h2>
+
+    <div class="skills-container">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Responsive Design</div>
+      <div class="skill-card">UI/UX</div>
+      <div class="skill-card">GitHub</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects-container">
+      <div class="project-card">Portfolio Website</div>
+      <div class="project-card">Landing Page</div>
+      <div class="project-card">To-Do App</div>
+    </div>
+  </section>
+<style>/* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5f5;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+</style>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+
+    <div class="contact-container">
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message"></textarea>
+        <button>Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Khushi</p>
+  </footer>
+
+  <script>
+    // Typing Effect
+    const text = ["Frontend Developer", "Web Designer", "UI Enthusiast"];
+    let index = 0;
+    let charIndex = 0;
+    const typingElement = document.querySelector(".typing");
+
+    function type() {
+      if (charIndex < text[index].length) {
+        typingElement.textContent += text[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 1500);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingElement.textContent = text[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        index = (index + 1) % text.length;
+        setTimeout(type, 500);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+
+    // Navbar toggle
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
