@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects Hub</title>
@@ -19,8 +20,7 @@
       color: white;
     }
 
-    /* NAVBAR */
-    .navbar {
+   .navbar {
       position: fixed;
       top: 0;
       width: 100%;
@@ -30,6 +30,7 @@
       align-items: center;
       background: rgba(15, 23, 42, 0.8);
       backdrop-filter: blur(10px);
+      z-index: 1000;
     }
 
     .logo {
@@ -50,6 +51,49 @@
     .nav-links a {
       text-decoration: none;
       color: #cbd5f5;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        right: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: #1e293b;
+        width: 200px;
+        padding: 20px;
+        transition: 0.3s;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
     }
 
     /* MAIN */
@@ -107,16 +151,20 @@
 
   <!-- NAVBAR -->
   <header class="navbar">
+   
     <div class="logo">Khushi</div>
-
+     
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\Home.html">Home</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\About.html">About</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\project.html">Projects</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\contact.html">Contact</a></li>
     </ul>
-  </header>
+     <div class="menu-toggle">&#9776;</div>
 
+
+
+</header>
   <!-- MAIN -->
   <div class="container">
 
