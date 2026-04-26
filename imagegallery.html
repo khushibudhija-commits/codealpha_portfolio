@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="logo">Khushi</div>
+
+    <ul class="nav-links">
+      <li><a href="C:\Users\hp\codealpha_portfolio\Home.html">Home</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\About.html">About</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\project.html">Projects</a></li>
+      <li><a href="C:\Users\hp\codealpha_portfolio\contact.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle">&#9776;</div>
+  </header>
+<h1>Image Gallery</h1>
+
+<!-- Filter Buttons -->
+<div class="filters">
+  <button onclick="filterImages('all')">All</button>
+  <button onclick="filterImages('nature')">Nature</button>
+  <button onclick="filterImages('animals')">Animals</button>
+  <button onclick="filterImages('city')">City</button>
+</div>
+
+<!-- Gallery -->
+<div class="gallery">
+  <img src="C:\Users\hp\Downloads\imagegallery1.jpg"class="nature" onclick="openModal(0)">
+  <img src="C:\Users\hp\Downloads\ig5.jpg" class="animals" onclick="openModal(1)">
+  <img src="C:\Users\hp\Downloads\ig7.jpg" class="city" onclick="openModal(2)">
+  <img src="C:\Users\hp\Downloads\imagegallery2.jpg" class="nature" onclick="openModal(3)">
+  <img src="C:\Users\hp\Downloads\ig6.jpg" class="animals" onclick="openModal(4)">
+  <img src="C:\Users\hp\Downloads\ig8.jpg" class="city" onclick="openModal(5)">
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="modalImg">
+  <div class="controls">
+    <button onclick="changeSlide(-1)">❮ Prev</button>
+    <button onclick="changeSlide(1)">Next ❯</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html><style>body {
+  font-family: Arial;
+  text-align: center;
+justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+}
+ /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5f5;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+h1 {
+  margin: 20px;
+}
+
+/* Filters */
+.filters button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filters button:hover {
+  background: #555;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  background: rgba(0,0,0,0.9);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modal img {
+  max-width: 80%;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+</style><script> currentIndex = 0;
+
+const images = document.querySelectorAll(".gallery img");
+
+/* OPEN MODAL */
+function openModal(index) {
+  document.getElementById("modal").style.display = "block";
+  currentIndex = index;
+  showImage();
+}
+
+/* CLOSE MODAL */
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+/* SHOW IMAGE */
+function showImage() {
+  const modalImg = document.getElementById("modalImg");
+  modalImg.src = images[currentIndex].src;
+}
+
+/* NEXT / PREVIOUS */
+function changeSlide(step) {
+  currentIndex += step;
+
+  if (currentIndex >= images.length) currentIndex = 0;
+  if (currentIndex < 0) currentIndex = images.length - 1;
+
+  showImage();
+}
+
+/* FILTER FUNCTION */
+function filterImages(category) {
+  images.forEach(img => {
+    if (category === "all") {
+      img.style.display = "block";
+    } else {
+      if (img.classList.contains(category)) {
+        img.style.display = "block";
+      } else {
+        img.style.display = "none";
+      }
+    }
+  });
+}</script>
